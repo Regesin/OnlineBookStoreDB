@@ -1,4 +1,8 @@
 package com.bookapp.main;
+/**
+ * @author SurapaneniArunSai
+ *
+ */
 
 import java.util.Scanner;
 
@@ -13,12 +17,13 @@ public class Client {
 
 	public static void main(String[] args) {
 		int select = 0, bookid = 0, price = 0;
-		String title, author, category, authorfind, categoryfind, titlefind;
+		String title, author, category,  categoryfind;
 
 		BookInter bookinter = new BookImpl();
 		Scanner sc = new Scanner(System.in);
 
-		while (true) {
+		while (true) { 
+			// Running infinite loop to get the Input from user 
 			System.out.println("Press 1) To Add Book");
 			System.out.println("Press 2) To Display all books");
 			System.out.println("Press 3) To Search Book By ID");
@@ -32,6 +37,7 @@ public class Client {
 			switch (select) {
 
 			case 1:
+				// To add Book
 				sc.nextLine();
 				System.out.println("Enter the Title of Book");
 				title = sc.nextLine();
@@ -47,11 +53,13 @@ public class Client {
 				bookinter.addBook(book);
 				break;
 			case 2:
+				// To display all Books in Database
 				System.out.println();
 				System.out.println("All Book in the database ::: ");
 				bookinter.getAllBooks();
 				break;
 			case 3:
+				// To Search Book by BookID
 				System.out.println("Enter the Book Id to Search");
 				sc.nextLine();
 				bookid = sc.nextInt();
@@ -65,6 +73,7 @@ public class Client {
 				break;
 
 			case 4:
+				// To search Book by Category
 				System.out.println("Enter the Category to Search");
 				sc.nextLine();
 				categoryfind = sc.nextLine();
@@ -77,6 +86,7 @@ public class Client {
 				}
 				break;
 			case 5:
+				// To Search Book by Author of the book
 				System.out.println("Enter the Author of the Book to Search");
 				sc.nextLine();
 				author = sc.nextLine();
@@ -89,6 +99,7 @@ public class Client {
 				}
 				break;
 			case 6:
+				// To update Book price by BookId
 				System.out.println("Enter the Book Price that to be updated ");
 				sc.nextLine();
 				price = sc.nextInt();
@@ -103,6 +114,7 @@ public class Client {
 				}
 				break;
 			case 7:
+				// To delete the book from database using BookID
 				System.out.println("Enter the BookID to Delete the Book");
 				sc.nextLine();
 				bookid = sc.nextInt();
@@ -114,6 +126,8 @@ public class Client {
 				}
 				break;
 			default:
+				// To exit the infinite loop 
+				sc.close();
 				System.exit(0);
 			}
 

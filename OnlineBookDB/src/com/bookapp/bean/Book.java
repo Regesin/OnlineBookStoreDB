@@ -1,4 +1,11 @@
+/**
+ * 
+ */
 package com.bookapp.bean;
+/**
+ * @author SurapaneniArunSai
+ *
+ */
 
 public class Book {
 	String title, author, category;

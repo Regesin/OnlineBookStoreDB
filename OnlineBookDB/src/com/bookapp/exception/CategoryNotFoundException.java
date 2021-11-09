@@ -1,4 +1,9 @@
 package com.bookapp.exception;
+/**
+ * @author SurapaneniArunSai
+ *
+ */
+
 
 public class CategoryNotFoundException extends Exception {
 
